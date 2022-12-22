@@ -14,9 +14,9 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 add_executable(
-    lab3
-    lab3.cpp
-    binvec.cpp
+    lab2
+    lab2.cpp
+    curve.cpp
 )
 
 enable_testing()
@@ -24,7 +24,7 @@ enable_testing()
 add_executable(
   tests
   tests.cpp
-  binvec.cpp
+  curve.cpp
 )
 target_link_libraries(
   tests

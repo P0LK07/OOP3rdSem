@@ -33,7 +33,7 @@ BinVec::BinVec(int number)
     std::string bin = "";
     while(number)
     {
-        bin = bin + (char)(number % 2); 
+        bin = (char)(number % 2) + bin; 
         number /= 2;
     }
     size = bin.length();

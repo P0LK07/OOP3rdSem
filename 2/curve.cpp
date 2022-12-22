@@ -26,9 +26,9 @@ double Curve::get_Rcurve_bottom()
 }
 double Curve::get_len_of_biggest()
 {
-    return sqrt(3/2)*n*sqrt(2*sqrt(3) - 3);
+    return sqrt(1.5)*n*sqrt(2*sqrt(3) - 3);
 }
 double Curve::get_len_to_biggest()
 {
-    return sqrt(1/2)*n;
+    return sqrt(0.5)*n;
 }
