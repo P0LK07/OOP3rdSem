@@ -10,6 +10,7 @@ class BinVec{
     public:
         BinVec();
         BinVec(const BinVec&);
+        BinVec(BinVec&&);
         BinVec(int);
         int len() const;
         BinVec& operator=(const BinVec&);
@@ -19,7 +20,7 @@ class BinVec{
         char& operator[](int index);
         BinVec operator|(const BinVec);
         BinVec operator&(const BinVec);
-        //BinVec shrink(BinVec);
+        
         void shrink();
         ~BinVec();
 };

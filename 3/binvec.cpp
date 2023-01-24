@@ -21,11 +21,19 @@ void BinVec::_resize(const int new_size)
 }
 
 BinVec::BinVec(const BinVec& vector)
+: size(vector.len())
 {
-    size = vector.len();
-    this->vec = new char[size];
+    vec = new char[size];
     for(int a = 0; a < size; a++)
         vec[a] = vector[a];
+}
+
+BinVec::BinVec(BinVec&& p)
+: vec(p.vec)
+, size(p.len())
+{
+    p.vec = nullptr;
+    p.size = 0;
 }
 
 BinVec::BinVec(int number)
