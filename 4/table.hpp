@@ -40,7 +40,12 @@ public:
         return *this;
     }
     Table<T1, T2>& operator=(Table<T1, T2>&& table){
-        
+        size_t mlen = len;
+        len = table.len
+        table.len = mlen;
+        struct Element *ptr = tab;
+        tab = table.tab;
+        table.tab = ptr;
         return *this;
     }
     void Insert(std::shared_ptr<T2> new_element){
@@ -52,53 +57,53 @@ public:
         tab[prev_len].ptr = new_element; 
     }
     void DeleteElement(T1 key){
-    if(!len)
-        throw ERROR;
-    Element* prev = &(tab[0]);
-    bool flag = false;
-    for(int a = 0; a < len; a++) {
+        if(!len)
+            throw ERROR;
+        Element* prev = &(tab[0]);
+        bool flag = false;
+        for(int a = 0; a < len; a++) {
         if(flag){
-            prev->key = tab[a].key;
-            prev->ptr = tab[a].ptr;
+                prev->key = tab[a].key;
+                prev->ptr = tab[a].ptr;
+            }
+            if(tab[a].key == key)
+                flag = true;
+            prev = &(tab[a]);
         }
-        if(tab[a].key == key)
-            flag = true;
-        prev = &(tab[a]);
-    }
-    if(!flag)
-        throw ERROR;
-    _resize(len-1);
+        if(!flag)
+            throw ERROR;
+        _resize(len-1);
     }
     /**
     * Get value by key.
     */
     std::shared_ptr<T2> operator[](T1 key){
-    for(int a = 0; a < len; a++) {
-    if(tab[a].key == key)
-        return tab[a].ptr;
+        for(int a = 0; a < len; a++) {
+        if(tab[a].key == key)
+            return tab[a].ptr;
     }
     throw ERROR;
     }
     /**
     * Output table.
     */    
-    void Show(std::string header) {
+    void Show(std::string header) const{
         std::cout << header << '\n';
         for(int a = 0; a < len; a++)
             std::cout << tab[a].ptr->TableShow() << '\n';
     }
-    size_t size() const {return len;};
+    size_t size() const { return len; }
 
-    ~Table(){
-    if(tab != nullptr)
-        delete[] tab;
-    len = 0;
+    ~Table() {
+        if(tab != nullptr)
+            delete[] tab;
+        len = 0;
     }
 private:
     /**
     * Check if key unique for current table.
     */
-    bool check_unique(T1 key) {
+    bool check_unique(T1 key) const {
         for(int a = 0; a < len; a++)
             if(tab[a].key == key)
                 return false;
@@ -106,20 +111,20 @@ private:
     }
     struct Element *tab;
     size_t len;
-    void _resize(size_t new_size){
-    Element* new_tab = new Element[new_size];
-    for(int a = 0; a < new_size; a++) {
-        if(a < len) {
-            new_tab[a].key = tab[a].key;
-            new_tab[a].ptr = tab[a].ptr;
-        }else{
-            new_tab[a].key = 0;
-            new_tab[a].ptr = nullptr;
+    void _resize(size_t new_size) {
+        Element* new_tab = new Element[new_size];
+        for(int a = 0; a < new_size; a++) {
+            if(a < len) {
+                new_tab[a].key = tab[a].key;
+                new_tab[a].ptr = tab[a].ptr;
+           }else{
+                new_tab[a].key = 0;
+               new_tab[a].ptr = nullptr;
+           }
         }
+        if(tab != nullptr)
+           delete[] tab;
+        tab = new_tab;
+        len = new_size;
     }
-    if(tab != nullptr)
-        delete[] tab;
-    tab = new_tab;
-    len = new_size;
-}
 };

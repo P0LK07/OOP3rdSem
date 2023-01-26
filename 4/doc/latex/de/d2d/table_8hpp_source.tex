@@ -43,79 +43,84 @@
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
 \DoxyCodeLine{00041\ \ \ \ \ \}}
 \DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ \mbox{\hyperlink{classTable_af050f143ac79f26c5f5f0f37ecedc547}{operator=}}(\mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\&\ table)\{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a43a1e8ffa55655182bdd0f564f4011fe}{Insert}}(std::shared\_ptr<T2>\ new\_element)\{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!check\_unique(new\_element-\/>GetCode()))}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ prev\_len\ =\ len;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \_resize(len\ +\ 1);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ tab[prev\_len].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ new\_element-\/>GetCode();}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ tab[prev\_len].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ new\_element;\ }
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a8a151b2328d2c7097a80bee46e9d6420}{DeleteElement}}(T1\ key)\{}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}(!len)}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
-\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{structTable_1_1Element}{Element}}*\ prev\ =\ \&(tab[0]);}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(flag)\{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ tab[a].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}};}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ prev\ =\ \&(tab[a]);}
-\DoxyCodeLine{00067\ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}(!flag)}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
-\DoxyCodeLine{00070\ \ \ \ \ \_resize(len-\/1);}
-\DoxyCodeLine{00071\ \ \ \ \ \}}
-\DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<T2>\ \mbox{\hyperlink{classTable_a0e5ead111c511adddf5e23c956e45fff}{operator[]}}(T1\ key)\{}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
-\DoxyCodeLine{00079\ \ \ \ \ \}}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
-\DoxyCodeLine{00081\ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a573c258c7a5529ab145121c1d309632b}{Show}}(std::string\ header)\ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ header\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ tab[a].ptr-\/>TableShow()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00089\ \ \ \ \ \}}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classTable_af8b08c44ecbbe3053ccc158e0dbb8f16}{size}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ len;\};}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classTable_a0cd6f75f3356de7caa9c106d2d5aff5f}{\string~Table}}()\{}
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}(tab\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tab;}
-\DoxyCodeLine{00095\ \ \ \ \ len\ =\ 0;}
-\DoxyCodeLine{00096\ \ \ \ \ \}}
-\DoxyCodeLine{00097\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_unique(T1\ key)\ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00106\ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{struct\ }Element\ *tab;}
-\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ len;}
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \_resize(\textcolor{keywordtype}{size\_t}\ new\_size)\{}
-\DoxyCodeLine{00110\ \ \ \ \ Element*\ new\_tab\ =\ \textcolor{keyword}{new}\ Element[new\_size];}
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ new\_size;\ a++)\ \{}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(a\ <\ len)\ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].key\ =\ tab[a].key;}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].ptr\ =\ tab[a].ptr;}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].key\ =\ 0;}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].ptr\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00119\ \ \ \ \ \}}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{if}(tab\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tab;}
-\DoxyCodeLine{00122\ \ \ \ \ tab\ =\ new\_tab;}
-\DoxyCodeLine{00123\ \ \ \ \ len\ =\ new\_size;}
-\DoxyCodeLine{00124\ \}}
-\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ mlen\ =\ len;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ len\ =\ table.len}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ table.len\ =\ mlen;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTable_1_1Element}{Element}}\ *ptr\ =\ tab;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ tab\ =\ table.tab;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ table.tab\ =\ ptr;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a43a1e8ffa55655182bdd0f564f4011fe}{Insert}}(std::shared\_ptr<T2>\ new\_element)\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!check\_unique(new\_element-\/>GetCode()))}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ prev\_len\ =\ len;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_resize(len\ +\ 1);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ tab[prev\_len].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ new\_element-\/>GetCode();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ tab[prev\_len].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ new\_element;\ }
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a8a151b2328d2c7097a80bee46e9d6420}{DeleteElement}}(T1\ key)\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!len)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTable_1_1Element}{Element}}*\ prev\ =\ \&(tab[0]);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(flag)\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ tab[a].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ prev\ =\ \&(tab[a]);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!flag)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_resize(len-\/1);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ std::shared\_ptr<T2>\ \mbox{\hyperlink{classTable_a0e5ead111c511adddf5e23c956e45fff}{operator[]}}(T1\ key)\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a8ae7b9e07195d83c649a080046640137}{Show}}(std::string\ header)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::cout\ <<\ header\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ tab[a].ptr-\/>TableShow()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classTable_af8b08c44ecbbe3053ccc158e0dbb8f16}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ len;\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classTable_a0cd6f75f3356de7caa9c106d2d5aff5f}{\string~Table}}()\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tab;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ len\ =\ 0;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_unique(T1\ key)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{struct\ }Element\ *tab;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ len;}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \_resize(\textcolor{keywordtype}{size\_t}\ new\_size)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ Element*\ new\_tab\ =\ \textcolor{keyword}{new}\ Element[new\_size];}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ new\_size;\ a++)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(a\ <\ len)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].key\ =\ tab[a].key;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].ptr\ =\ tab[a].ptr;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].key\ =\ 0;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].ptr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tab;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ tab\ =\ new\_tab;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ len\ =\ new\_size;}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \};}
 
 \end{DoxyCode}
