@@ -14,6 +14,7 @@ class BinVec{
         BinVec(int);
         int len() const;
         BinVec& operator=(const BinVec&);
+        BinVec& operator=(BinVec&&);
         BinVec& operator=(int);
         BinVec operator^(const BinVec);
         char operator[](int index) const;

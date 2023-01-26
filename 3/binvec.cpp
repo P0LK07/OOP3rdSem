@@ -27,7 +27,16 @@ BinVec::BinVec(const BinVec& vector)
     for(int a = 0; a < size; a++)
         vec[a] = vector[a];
 }
-
+BinVec& BinVe::operator=(BinVec&& vector)
+{
+    int tsize = size;
+    size = vector.size;
+    vector.size = tsize;
+    char *ptr = vec;
+    vec = vector.vec;
+    vector.vec = ptr;
+    return *this;
+}
 BinVec::BinVec(BinVec&& p)
 : vec(p.vec)
 , size(p.len())
