@@ -1,31 +1,31 @@
 \hypertarget{deposit_8hpp_source}{}\doxysection{deposit.\+hpp}
-
+\mbox{\hyperlink{deposit_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DEPOSIT}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DEPOSIT}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}casual.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{casual_8hpp}{casual.hpp}}"{}}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ }
 \DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDeposit}{Deposit}}\ \{}
 \DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00008\ \ \ \ \ Hash\ deposit\_number;}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{double}\ value;}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ percent;}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ open\_date;}
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ oper\_date;}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{casual_8hpp_aa5b3ba6ecdc43d3130f67f9a254e2302}{Hash}}\ \mbox{\hyperlink{classDeposit_ae96149b780095452a4def3b1043e377b}{deposit\_number}};}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_a9b24c7d29fd3b963be638dd0a4a19459}{value}};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_a830ad8fffa588696e3c6eb3091242127}{percent}};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ \mbox{\hyperlink{classDeposit_a4dbff2447d7cd49bf6d0777b3092496f}{open\_date}};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ \mbox{\hyperlink{classDeposit_a20a751428d5d52dd89119b61671c7097}{oper\_date}};}
 \DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classDeposit}{Deposit}}(Hash,\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}});}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ GetValue()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ GetPercent()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ percent;\};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classDeposit}{Deposit}}(\mbox{\hyperlink{casual_8hpp_aa5b3ba6ecdc43d3130f67f9a254e2302}{Hash}},\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}});}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_aed36d4df1a4c35c2ee51db075a9b6b2c}{GetValue}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_aae5a31d49161dca378b5e81ad1c3b244}{GetPercent}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDeposit_a830ad8fffa588696e3c6eb3091242127}{percent}};\};}
 \DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_adeafac13c4d86d25ac6816706d34f03a}{CountPercents}}(\mbox{\hyperlink{classDate}{Date}});}
-\DoxyCodeLine{00018\ \ \ \ \ Hash\ GetCode()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ GetOpenDate()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ GetLastOperationDate()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ SetLastOperationDate(\mbox{\hyperlink{classDate}{Date}}\ new\_date);}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ SetValue(\textcolor{keywordtype}{double}\ new\_value);}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ AddValue(\textcolor{keywordtype}{double});}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ Show();}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ TableShow();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{casual_8hpp_aa5b3ba6ecdc43d3130f67f9a254e2302}{Hash}}\ \mbox{\hyperlink{classDeposit_ab9bb9da40a27a071c1f19d455d3a65f6}{GetCode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ \mbox{\hyperlink{classDeposit_a9a0b8f2f01b33ba3006e4db1abe5bbe7}{GetOpenDate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ \mbox{\hyperlink{classDeposit_ab66a02685d4d2fae08fc09e6c4d5c0b6}{GetLastOperationDate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDeposit_a74505da1d79117eb239e08bbf8d37045}{SetLastOperationDate}}(\mbox{\hyperlink{classDate}{Date}}\ new\_date);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDeposit_a6e3c03a3029d2203e90ba5e7b367661b}{SetValue}}(\textcolor{keywordtype}{double}\ new\_value);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDeposit_ae4add41ca12fabd5e2647562f21d3b3c}{AddValue}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classDeposit_a1fced6ccda265fcd4fc8a1efc0b4789b}{Show}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classDeposit_a1678ea05ffa8ef3ac79c270a0dbaf594}{TableShow}}();}
 \DoxyCodeLine{00026\ \};}
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFastDeposit}{FastDeposit}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDeposit}{Deposit}}\{}
@@ -33,9 +33,9 @@
 \DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ end\_date;}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classFastDeposit}{FastDeposit}}(Hash,\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}}\ ,\mbox{\hyperlink{classDate}{Date}});}
-\DoxyCodeLine{00034\ \ \ \ \ std::string\ Show();}
-\DoxyCodeLine{00035\ \ \ \ \ std::string\ TableShow();}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classFastDeposit}{FastDeposit}}(\mbox{\hyperlink{casual_8hpp_aa5b3ba6ecdc43d3130f67f9a254e2302}{Hash}},\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}}\ ,\mbox{\hyperlink{classDate}{Date}});}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{classFastDeposit_acabd4888f0149f1cc0977fcc45623abc}{Show}}();}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ \mbox{\hyperlink{classFastDeposit_a68c60d5c2ce700cb7aac52ab52acaaeb}{TableShow}}();}
 \DoxyCodeLine{00036\ \};}
 \DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCurrencyDeposit}{CurrencyDeposit}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDeposit}{Deposit}}\{}
 \DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
@@ -43,9 +43,9 @@
 \DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ currency\_diff;}
 \DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ ToRUB()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classCurrencyDeposit}{CurrencyDeposit}}(Hash\ code,\ std::string,\ \textcolor{keywordtype}{double}\ value,\ \textcolor{keywordtype}{double}\ percent,\textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}}\ date);}
-\DoxyCodeLine{00044\ \ \ \ \ std::string\ Show();}
-\DoxyCodeLine{00045\ \ \ \ \ std::string\ TableShow();}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classCurrencyDeposit}{CurrencyDeposit}}(\mbox{\hyperlink{casual_8hpp_aa5b3ba6ecdc43d3130f67f9a254e2302}{Hash}}\ code,\ std::string,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_a9b24c7d29fd3b963be638dd0a4a19459}{value}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_a830ad8fffa588696e3c6eb3091242127}{percent}},\textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}}\ date);}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{classCurrencyDeposit_a3479e0b5e9a4b91f6a9d4a09f9316c00}{Show}}();}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{classCurrencyDeposit_a67821d85e551a8442db2db61a86669fc}{TableShow}}();}
 \DoxyCodeLine{00046\ \};}
 \DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
 

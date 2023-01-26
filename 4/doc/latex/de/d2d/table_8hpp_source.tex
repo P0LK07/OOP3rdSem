@@ -1,9 +1,9 @@
 \hypertarget{table_8hpp_source}{}\doxysection{table.\+hpp}
-
+\mbox{\hyperlink{table_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once\ }}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}casual.hpp"{}}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}deposit.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{casual_8hpp}{casual.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{deposit_8hpp}{deposit.hpp}}"{}}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iterator>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
@@ -16,77 +16,77 @@
 \DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTable}{Table}}\ \{}
 \DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTable_1_1Element}{Element}}\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ T1\ key;}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::shared\_ptr<T2>\ ptr;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ T1\ \mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::shared\_ptr<T2>\ \mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
 \DoxyCodeLine{00018\ \ \ \ \ \};}
-\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classTable}{Table}}():\ tab(nullptr),\ len(0)\{\}}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classTable}{Table}}(\mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\&\ table):\ tab(table.tab),\ len(table.len)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classTable_a9d19c164ce189a30016a0c3568cf22c5}{Table}}():\ tab(nullptr),\ len(0)\{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classTable_a54b437293fbb22b44b759be58e823527}{Table}}(\mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\&\ table):\ tab(table.tab),\ len(table.len)\ \{}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ table.tab\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{00022\ \ \ \ \ \}}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classTable}{Table}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\ \&table)}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classTable_a9eea396e9bda6b3a5449cbe509cf011e}{Table}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\ \&table)}
 \DoxyCodeLine{00024\ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ tab\ =\ \textcolor{keyword}{new}\ Element[table.size()];}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ len\ =\ table.size();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ tab\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structTable_1_1Element}{Element}}[table.\mbox{\hyperlink{classTable_af8b08c44ecbbe3053ccc158e0dbb8f16}{size}}()];}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ len\ =\ table.\mbox{\hyperlink{classTable_af8b08c44ecbbe3053ccc158e0dbb8f16}{size}}();}
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].key\ =\ table.tab[a].key;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].ptr\ =\ table.tab[a].ptr;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ table.tab[a].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ table.tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ table)\{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ \mbox{\hyperlink{classTable_a56c63e08670b7e0bdef11d4effc04c99}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ table)\{}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_resize(table.len);}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].key\ =\ table.tab[a].key;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].ptr\ =\ table.tab[a].ptr;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ table.tab[a].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ table.tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
 \DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
 \DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ operator=(\mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\&\ table)\{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ \mbox{\hyperlink{classTable_af050f143ac79f26c5f5f0f37ecedc547}{operator=}}(\mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\&\ table)\{}
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
 \DoxyCodeLine{00045\ \ \ \ \ \}}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ Insert(std::shared\_ptr<T2>\ new\_element)\{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a43a1e8ffa55655182bdd0f564f4011fe}{Insert}}(std::shared\_ptr<T2>\ new\_element)\{}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!check\_unique(new\_element-\/>GetCode()))}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ prev\_len\ =\ len;}
 \DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \_resize(len\ +\ 1);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ tab[prev\_len].key\ =\ new\_element-\/>GetCode();}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ tab[prev\_len].ptr\ =\ new\_element;\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ tab[prev\_len].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ new\_element-\/>GetCode();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ tab[prev\_len].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ new\_element;\ }
 \DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ DeleteElement(T1\ key)\{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a8a151b2328d2c7097a80bee46e9d6420}{DeleteElement}}(T1\ key)\{}
 \DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}(!len)}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
-\DoxyCodeLine{00057\ \ \ \ \ Element*\ prev\ =\ \&(tab[0]);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{structTable_1_1Element}{Element}}*\ prev\ =\ \&(tab[0]);}
 \DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(flag)\{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>key\ =\ tab[a].key;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>ptr\ =\ tab[a].ptr;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}}\ =\ tab[a].\mbox{\hyperlink{structTable_1_1Element_addd48b6cc7b1d210945359f03616b11e}{key}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}}\ =\ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ prev\ =\ \&(tab[a]);}
 \DoxyCodeLine{00067\ \ \ \ \ \}}
 \DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}(!flag)}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
 \DoxyCodeLine{00070\ \ \ \ \ \_resize(len-\/1);}
 \DoxyCodeLine{00071\ \ \ \ \ \}}
 \DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<T2>\ \mbox{\hyperlink{classTable_a0e5ead111c511adddf5e23c956e45fff}{operator[]}}(T1\ key)\{}
 \DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
 \DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tab[a].ptr;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tab[a].\mbox{\hyperlink{structTable_1_1Element_a0e5372d2b70a2afd98c88317d811a256}{ptr}};}
 \DoxyCodeLine{00079\ \ \ \ \ \}}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{casual_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}};}
 \DoxyCodeLine{00081\ \ \ \ \ \}}
 \DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a573c258c7a5529ab145121c1d309632b}{Show}}(std::string\ header)\ \{}
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ header\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
 \DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ tab[a].ptr-\/>TableShow()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{00089\ \ \ \ \ \}}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ len;\};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classTable_af8b08c44ecbbe3053ccc158e0dbb8f16}{size}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ len;\};}
 \DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classTable}{\string~Table}}()\{}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classTable_a0cd6f75f3356de7caa9c106d2d5aff5f}{\string~Table}}()\{}
 \DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}(tab\ !=\ \textcolor{keyword}{nullptr})}
 \DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tab;}
 \DoxyCodeLine{00095\ \ \ \ \ len\ =\ 0;}

@@ -1,0 +1,5 @@
+<map id="Deposit" name="Deposit">
+<area shape="rect" id="node1" title=" " alt="" coords="61,5,232,303"/>
+<area shape="rect" id="node2" href="$dc/d25/classCurrencyDeposit.html" title=" " alt="" coords="5,351,141,457"/>
+<area shape="rect" id="node3" href="$da/dde/classFastDeposit.html" title=" " alt="" coords="166,351,277,457"/>
+</map>

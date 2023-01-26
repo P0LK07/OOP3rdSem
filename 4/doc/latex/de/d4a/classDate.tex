@@ -4,6 +4,10 @@
 
 {\ttfamily \#include $<$casual.\+hpp$>$}
 
+
+
+Collaboration diagram for Date\+:
+% FIG 0
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,20 +19,15 @@ unsigned \mbox{\hyperlink{classDate_a4f6efda649848ed64dd56efd48a38b1b}{to\+\_\+y
 \item 
 \mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classDate_afac9321a6c0a6716aa26081e6a15462d}{operator-\/}} (const \mbox{\hyperlink{classDate}{Date}}) const
 \item 
-\mbox{\Hypertarget{classDate_aa8dc629b39fd9fe7cb16caedc5d97eef}\label{classDate_aa8dc629b39fd9fe7cb16caedc5d97eef}} 
-bool {\bfseries operator==} (const \mbox{\hyperlink{classDate}{Date}}) const
+bool \mbox{\hyperlink{classDate_aa8dc629b39fd9fe7cb16caedc5d97eef}{operator==}} (const \mbox{\hyperlink{classDate}{Date}}) const
 \item 
-\mbox{\Hypertarget{classDate_a23670209a2f845077fcd12cbfadb7612}\label{classDate_a23670209a2f845077fcd12cbfadb7612}} 
-bool {\bfseries operator$<$} (const \mbox{\hyperlink{classDate}{Date}}) const
+bool \mbox{\hyperlink{classDate_a23670209a2f845077fcd12cbfadb7612}{operator$<$}} (const \mbox{\hyperlink{classDate}{Date}}) const
 \item 
-\mbox{\Hypertarget{classDate_aca11bce5f2926889725943b8fee0c620}\label{classDate_aca11bce5f2926889725943b8fee0c620}} 
-bool {\bfseries operator$<$=} (const \mbox{\hyperlink{classDate}{Date}}) const
+bool \mbox{\hyperlink{classDate_aca11bce5f2926889725943b8fee0c620}{operator$<$=}} (const \mbox{\hyperlink{classDate}{Date}}) const
 \item 
-\mbox{\Hypertarget{classDate_addfc3929d88e6a107f776c117ec71e00}\label{classDate_addfc3929d88e6a107f776c117ec71e00}} 
-bool {\bfseries operator$>$} (const \mbox{\hyperlink{classDate}{Date}}) const
+bool \mbox{\hyperlink{classDate_addfc3929d88e6a107f776c117ec71e00}{operator$>$}} (const \mbox{\hyperlink{classDate}{Date}}) const
 \item 
-\mbox{\Hypertarget{classDate_a70c239a764f53305775c3eb10b78d2e4}\label{classDate_a70c239a764f53305775c3eb10b78d2e4}} 
-bool {\bfseries operator$>$=} (const \mbox{\hyperlink{classDate}{Date}}) const
+bool \mbox{\hyperlink{classDate_a70c239a764f53305775c3eb10b78d2e4}{operator$>$=}} (const \mbox{\hyperlink{classDate}{Date}}) const
 \item 
 std\+::string \mbox{\hyperlink{classDate_acc0fb02f232c1b663638dea3f8f7310d}{show}} () const
 \end{DoxyCompactItemize}
@@ -62,7 +61,37 @@ Create \mbox{\hyperlink{classDate}{Date}} class object.
 \doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Date\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{a }\end{DoxyParamCaption}) const}
 
-Get difference between current date and some date. \mbox{\Hypertarget{classDate_acc0fb02f232c1b663638dea3f8f7310d}\label{classDate_acc0fb02f232c1b663638dea3f8f7310d}} 
+Get difference between current date and some date. \mbox{\Hypertarget{classDate_a23670209a2f845077fcd12cbfadb7612}\label{classDate_a23670209a2f845077fcd12cbfadb7612}} 
+\index{Date@{Date}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Date\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{date }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDate_aca11bce5f2926889725943b8fee0c620}\label{classDate_aca11bce5f2926889725943b8fee0c620}} 
+\index{Date@{Date}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Date\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{date }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDate_aa8dc629b39fd9fe7cb16caedc5d97eef}\label{classDate_aa8dc629b39fd9fe7cb16caedc5d97eef}} 
+\index{Date@{Date}!operator==@{operator==}}
+\index{operator==@{operator==}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Date\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{date }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDate_addfc3929d88e6a107f776c117ec71e00}\label{classDate_addfc3929d88e6a107f776c117ec71e00}} 
+\index{Date@{Date}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Date\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{date }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDate_a70c239a764f53305775c3eb10b78d2e4}\label{classDate_a70c239a764f53305775c3eb10b78d2e4}} 
+\index{Date@{Date}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Date\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{date }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDate_acc0fb02f232c1b663638dea3f8f7310d}\label{classDate_acc0fb02f232c1b663638dea3f8f7310d}} 
 \index{Date@{Date}!show@{show}}
 \index{show@{show}!Date@{Date}}
 \doxysubsubsection{\texorpdfstring{show()}{show()}}
@@ -84,5 +113,5 @@ Count number of years between date 0.\+0.\+0000 and current date.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-casual.\+hpp\item 
-casual.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{casual_8hpp}{casual.\+hpp}}\item 
+\mbox{\hyperlink{casual_8cpp}{casual.\+cpp}}\end{DoxyCompactItemize}
