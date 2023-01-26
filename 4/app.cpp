@@ -13,8 +13,7 @@ void App::start(){
     std::cout << "Welcome to brand new bank account app\n";
     show_help();
     int c = 0;
-    while(c != EXIT)
-    {
+    while(c != EXIT) {
         c = main_menu();
         if(c == 1 ){
             std::cout << "Invalid choice\n";
@@ -22,8 +21,7 @@ void App::start(){
     }
 }
 
-int get_choice()
-{
+int get_choice() {
     int ret;
     std::cout << "> ";
     std::cin >> ret;
@@ -32,15 +30,13 @@ int get_choice()
 
 int App::main_menu(){
     std::srand(std::time(NULL));
-    std::string header = "| Num |  Type   |  Opened  |  LastOp  |Cur|Diff|       Value      |  % |";
+    std::string header = "|   Num    |  Type   |  Opened  |  LastOp  |Cur|Diff|   Value  |  % |";
     int choice = get_choice();
-    switch(choice)
-    {
+    switch(choice) {
         case 1:
             try{
             insert();
-            }catch(int e)
-            {
+            }catch(int e) {
                 std::cout << "ERROR INSERT!\n";
             }
             return OK;
@@ -48,8 +44,7 @@ int App::main_menu(){
         case 2:
             try{
             manage_deposit();
-            }catch(int e)
-            {
+            }catch(int e) {
                 std::cout << "ERROR MANAGE!\n";
             }
             return OK;
@@ -71,8 +66,7 @@ void App::insert(){
          << "2. Fast     deposit\n"
          << "3. Currency deposit\n";
     deposit_type = get_choice();
-    switch(deposit_type)
-    {
+    switch(deposit_type) {
         case 1:
             insert_casual();
             break;
@@ -86,17 +80,14 @@ void App::insert(){
             throw ERROR;  
     }   
 }
-void App::insert_casual()
-{
+void App::insert_casual() {
     Hash code;
     int done = 0;
-    while(!done)
-    {
-        code = std::rand();
+    while(!done) {
+        code = std::rand() % (int)1e10;
         try{
             table[code];
-        }catch(int e)
-        {
+        }catch(int e) {
             done = 1;
         }
     }
@@ -108,21 +99,20 @@ void App::insert_casual()
     std::cin >> percent;
     std::cout << "Enter date when deposit was opened (DD MM YY): ";
     std::cin >> d >> m >> y;
-    Deposit n(code, value, percent, Date(d,m,y));
+    if(d > 31 || m > 12)
+        throw ERROR;
+    Deposit n(code, value, percent / 100.0, Date(d,m,y));
     table.Insert(std::make_shared<Deposit>(n));
 }
 
-void App::insert_fast()
-{
+void App::insert_fast() {
     Hash code;
     int done = 0;
-    while(!done)
-    {
-        code = std::rand();
+    while(!done) {
+        code = std::rand() % (int)1e10;
         try{
             table[code];
-        }catch(int e)
-        {
+        }catch(int e) {
             done = 1;
         }
     }
@@ -134,22 +124,23 @@ void App::insert_fast()
     std::cin >> percent;
     std::cout << "Enter date when deposit was opened (DD MM YY): ";
     std::cin >> d >> m >> y;
+    if(d > 31 || m > 12)
+        throw ERROR;
     std::cout << "Enter deposit close date (DD MM YY): ";
     std::cin >> d1 >> m1 >> y1;
-    FastDeposit n(code, value, percent, Date(d,m,y), Date(d1,m1,y1));
-    table.Insert(std::make_shared<Deposit>(n));
+    if(d1 > 31 || m1 > 12)
+        throw ERROR;
+    FastDeposit n(code, value, percent / 100.0, Date(d,m,y), Date(d1,m1,y1));
+    table.Insert(std::make_shared<FastDeposit>(n));
 }
-void App::insert_currency()
-{
+void App::insert_currency() {
     Hash code;
     int done = 0;
-    while(!done)
-    {
-        code = std::rand();
-        try{
+    while(!done) {
+        code = std::rand() % (int)1e10 ;
+        try {
             table[code];
-        }catch(int e)
-        {
+        }catch(int e) {
             done = 1;
         }
     };
@@ -166,34 +157,33 @@ void App::insert_currency()
     std::cin >> diff ;
     std::cout << "Enter date when deposit was opened (DD MM YY): ";
     std::cin >> d >> m >> y;
-    CurrencyDeposit n(code,name ,value, percent,diff ,Date(d,m,y));
-    table.Insert(std::make_shared<Deposit>(n));
+    if(d > 31 || m > 12)
+        throw ERROR;
+
+    CurrencyDeposit n(code,name ,value, percent / 100.0,diff ,Date(d,m,y));
+    table.Insert(std::make_shared<CurrencyDeposit>(n));
 }
 
-void App::manage_deposit()
-{
+void App::manage_deposit() {
     Hash key;
     std::shared_ptr<Deposit> ret;
     bool shit = false;
     std::cout << "Enter deposit number: ";
     std::cin >> key;
-    try{
+    try {
         ret = table[key];
-    }catch (int e)
-    {
+    }catch (int e) {
         std::cout << "Error! No such element\n";
         shit = true;
     }
-    if(!shit)
-    {
-        ret->Show();
+    if(!shit) {
+        std::cout << ret->Show() << '\n';
         std::cout << "Choose option:\n"
                   << "1. Modify  deposit\n"
                   << "2. Close deposit\n"
                   << "3. Go back\n";
         int choice = get_choice();
-        switch(choice)
-        {
+        switch(choice) {
             case 1:
                 modify_deposit(ret);
                 break;
@@ -204,20 +194,17 @@ void App::manage_deposit()
     }
 }
 
-void App::modify_deposit( std::shared_ptr<Deposit> d)
-{
+void App::modify_deposit( std::shared_ptr<Deposit> d) {
     std::cout << "Choose option:\n"
               << "1. Insert some money\n"
               << "2. Take percents\n"
               << "3. Take money\n";
     int choice = get_choice();
-    switch(choice)
-    {
+    switch(choice) {
         case 1:
             try{
             insert_money(d);
-            }catch(int e)
-            {
+            }catch(int e) {
                 std::cout << "You can not insert negative money!\n";
             }
             break;
@@ -235,16 +222,16 @@ void App::modify_deposit( std::shared_ptr<Deposit> d)
     }
 }
 
-void App::insert_money(std::shared_ptr<Deposit> deposit)
-{
+void App::insert_money(std::shared_ptr<Deposit> deposit) {
     unsigned d, m, y;
     std::cout << "Enter date: ";
     std::cin >> d >> m >> y;
+    if(d > 31 || m > 12)
+        throw ERROR;
     double money;
     std::cout << "Enter amount: ";
     std::cin >> money;
-    if (money < 0)
-    {
+    if (money < 0) {
         throw ERROR;
     }
     deposit->AddValue(deposit->CountPercents(Date(d,m,y)));
@@ -255,32 +242,36 @@ void App::take_perc(std::shared_ptr<Deposit> deposit){
     unsigned d, m, y;
     std::cout << "Enter date: ";
     std::cin >> d >> m >> y;
+    if(d > 31 || m > 12)
+        throw ERROR;
     double percents = deposit->CountPercents(Date(d,m,y));
     std::cout << "You've taken " << percents << '\n';
 }
 
-void App::take_money(std::shared_ptr<Deposit> deposit)
-{
+void App::take_money(std::shared_ptr<Deposit> deposit) {
     unsigned d, m, y;
     std::cout << "Enter date: ";
     std::cin >> d >> m >> y;
+    if(d > 31 || m > 12)
+        throw ERROR;
     double money;
     std::cout << "Enter amount: ";
     std::cin >> money;
     money = -money;
-    if (money > 0)
-    {
+    if (money > 0) {
         throw ERROR;
     }
+
     deposit->AddValue(deposit->CountPercents(Date(d,m,y)));
     deposit->AddValue(money);
     std::cout << "Took successfully\n";
 }
-void App::close_deposit( std::shared_ptr<Deposit> deposit)
-{
+void App::close_deposit( std::shared_ptr<Deposit> deposit) {
     unsigned d, m, y;
     std::cout << "Enter date: ";
     std::cin >> d >> m >> y;
+    if(d > 31 || m > 12 || Date(d,m,y) <= deposit->GetLastOperationDate())
+        throw ERROR;
     double cash = deposit->GetValue() + deposit->CountPercents(Date(d,m,y));
     table.DeleteElement(deposit->GetCode());
     std::cout << "You took: " << cash << '\n';

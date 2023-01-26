@@ -1,0 +1,121 @@
+\hypertarget{table_8hpp_source}{}\doxysection{table.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}casual.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}deposit.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*Template\ map\ class.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T1,\ \textcolor{keyword}{class}\ T2>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTable}{Table}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTable_1_1Element}{Element}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ T1\ key;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::shared\_ptr<T2>\ ptr;}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classTable}{Table}}():\ tab(nullptr),\ len(0)\{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classTable}{Table}}(\mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\&\ table):\ tab(table.tab),\ len(table.len)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ table.tab\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classTable}{Table}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\ \&table)}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ tab\ =\ \textcolor{keyword}{new}\ Element[table.size()];}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ len\ =\ table.size();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].key\ =\ table.tab[a].key;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].ptr\ =\ table.tab[a].ptr;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ table)\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_resize(table.len);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].key\ =\ table.tab[a].key;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ tab[a].ptr\ =\ table.tab[a].ptr;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\ operator=(\mbox{\hyperlink{classTable}{Table<T1,\ T2>}}\&\&\ table)\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ Insert(std::shared\_ptr<T2>\ new\_element)\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!check\_unique(new\_element-\/>GetCode()))}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ prev\_len\ =\ len;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \_resize(len\ +\ 1);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ tab[prev\_len].key\ =\ new\_element-\/>GetCode();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ tab[prev\_len].ptr\ =\ new\_element;\ }
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ DeleteElement(T1\ key)\{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}(!len)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
+\DoxyCodeLine{00057\ \ \ \ \ Element*\ prev\ =\ \&(tab[0]);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(flag)\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>key\ =\ tab[a].key;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>ptr\ =\ tab[a].ptr;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ prev\ =\ \&(tab[a]);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}(!flag)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
+\DoxyCodeLine{00070\ \ \ \ \ \_resize(len-\/1);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<T2>\ \mbox{\hyperlink{classTable_a0e5ead111c511adddf5e23c956e45fff}{operator[]}}(T1\ key)\{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tab[a].ptr;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{throw}\ ERROR;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTable_a573c258c7a5529ab145121c1d309632b}{Show}}(std::string\ header)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ header\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ tab[a].ptr-\/>TableShow()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ len;\};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classTable}{\string~Table}}()\{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}(tab\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tab;}
+\DoxyCodeLine{00095\ \ \ \ \ len\ =\ 0;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_unique(T1\ key)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ len;\ a++)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tab[a].key\ ==\ key)}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{struct\ }Element\ *tab;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ len;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \_resize(\textcolor{keywordtype}{size\_t}\ new\_size)\{}
+\DoxyCodeLine{00110\ \ \ \ \ Element*\ new\_tab\ =\ \textcolor{keyword}{new}\ Element[new\_size];}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ 0;\ a\ <\ new\_size;\ a++)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(a\ <\ len)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].key\ =\ tab[a].key;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].ptr\ =\ tab[a].ptr;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].key\ =\ 0;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ new\_tab[a].ptr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{if}(tab\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tab;}
+\DoxyCodeLine{00122\ \ \ \ \ tab\ =\ new\_tab;}
+\DoxyCodeLine{00123\ \ \ \ \ len\ =\ new\_size;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ \};}
+
+\end{DoxyCode}

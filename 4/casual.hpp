@@ -10,13 +10,12 @@ typedef int Hash;
 
 
 template<class T>
-std::string m_to_string(T value, int size)
-{
+std::string m_to_string(T value, int size) {
     std::string res = std::to_string(value);
     if(size < res.size())
         res.resize(size);
     else
-        for(int a = 0, b = 1; a < size;a++)
+        for(int a = res.size(), b = 1; a < size;a++)
             if(b){
                 res = ' ' + res;
                 b = 0;
@@ -26,7 +25,9 @@ std::string m_to_string(T value, int size)
             }
     return res;
 }
-
+/**
+* My own class for counting date.
+*/
 class Date{
 private:
     unsigned year;
@@ -34,9 +35,13 @@ private:
     unsigned day;
 public:
     Date(unsigned, unsigned, unsigned);
-    unsigned to_months();
-    unsigned to_years();
-    unsigned to_days();
-    Date& operator-(const Date a);
-    std::string show();
+    unsigned to_months() const;
+    unsigned to_years() const;
+    Date operator-(const Date) const;
+    bool operator==(const Date) const;
+    bool operator<(const Date) const;
+    bool operator<=(const Date) const;
+    bool operator>(const Date) const;
+    bool operator>=(const Date) const;
+    std::string show() const;
 };

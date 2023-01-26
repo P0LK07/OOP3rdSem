@@ -1,0 +1,49 @@
+\hypertarget{casual_8hpp_source}{}\doxysection{casual.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fmt/core.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ EXIT\ -\/1}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ OK\ 0;}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ERROR\ 1;}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ Hash;\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00013\ std::string\ m\_to\_string(T\ value,\ \textcolor{keywordtype}{int}\ size)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ res\ =\ std::to\_string(value);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{if}(size\ <\ res.size())}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ res.resize(size);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ a\ =\ res.size(),\ b\ =\ 1;\ a\ <\ size;a++)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(b)\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ =\ \textcolor{charliteral}{'\ '}\ +\ res;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ +=\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ 1;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDate}{Date}}\{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ year;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ month;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ day;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}(\textcolor{keywordtype}{unsigned},\ \textcolor{keywordtype}{unsigned},\ \textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classDate_a15a19216e9aa3e20d8fddcd620849b76}{to\_months}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classDate_a4f6efda649848ed64dd56efd48a38b1b}{to\_years}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ \mbox{\hyperlink{classDate_afac9321a6c0a6716aa26081e6a15462d}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{classDate_acc0fb02f232c1b663638dea3f8f7310d}{show}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \};}
+
+\end{DoxyCode}

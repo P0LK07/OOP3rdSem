@@ -1,0 +1,52 @@
+\hypertarget{deposit_8hpp_source}{}\doxysection{deposit.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DEPOSIT}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DEPOSIT}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}casual.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDeposit}{Deposit}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00008\ \ \ \ \ Hash\ deposit\_number;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{double}\ value;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ percent;}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ open\_date;}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ oper\_date;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classDeposit}{Deposit}}(Hash,\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}});}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ GetValue()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ GetPercent()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ percent;\};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDeposit_adeafac13c4d86d25ac6816706d34f03a}{CountPercents}}(\mbox{\hyperlink{classDate}{Date}});}
+\DoxyCodeLine{00018\ \ \ \ \ Hash\ GetCode()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ GetOpenDate()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ GetLastOperationDate()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ SetLastOperationDate(\mbox{\hyperlink{classDate}{Date}}\ new\_date);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ SetValue(\textcolor{keywordtype}{double}\ new\_value);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ AddValue(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ Show();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ TableShow();}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFastDeposit}{FastDeposit}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDeposit}{Deposit}}\{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ end\_date;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classFastDeposit}{FastDeposit}}(Hash,\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}}\ ,\mbox{\hyperlink{classDate}{Date}});}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ Show();}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ TableShow();}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCurrencyDeposit}{CurrencyDeposit}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDeposit}{Deposit}}\{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ currency\_name;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ currency\_diff;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ ToRUB()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classCurrencyDeposit}{CurrencyDeposit}}(Hash\ code,\ std::string,\ \textcolor{keywordtype}{double}\ value,\ \textcolor{keywordtype}{double}\ percent,\textcolor{keywordtype}{double},\ \mbox{\hyperlink{classDate}{Date}}\ date);}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ Show();}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ TableShow();}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

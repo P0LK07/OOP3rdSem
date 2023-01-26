@@ -3,7 +3,7 @@
 #include "casual.hpp"
 #include <string>
 
-class Deposit{
+class Deposit {
     protected:
     Hash deposit_number;
     double value;
@@ -13,6 +13,7 @@ class Deposit{
     public:
     Deposit(Hash, double, double, Date);
     double GetValue() const;
+    double GetPercent() const {return percent;};
     double CountPercents(Date);
     Hash GetCode() const;
     Date GetOpenDate() const;
@@ -21,7 +22,7 @@ class Deposit{
     void SetValue(double new_value);
     void AddValue(double);
     virtual std::string Show();
-    virtual std::string TableShow(); // Will use current machine time
+    virtual std::string TableShow();
 };
 
 class FastDeposit : public Deposit{

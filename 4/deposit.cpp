@@ -6,13 +6,17 @@ Deposit::Deposit(Hash code, double value, double percent, Date date):
 double Deposit::GetValue() const{
     return value;
 }
+/**
+* Get percents that will add to deposit by current_date.
+*/
 double Deposit::CountPercents(Date current_date){
+    if(current_date < oper_date)
+        throw ERROR;
     Date diff = current_date - oper_date;
     oper_date = current_date;
     int months_count =  diff.to_months();
     double midle_count = value, answer = 0;
-    for(int a = 0; a < months_count; a++)
-    {
+    for(int a = 0; a < months_count; a++) {
         answer += midle_count * percent;
         midle_count += midle_count * percent; 
     }
@@ -28,6 +32,8 @@ Date Deposit::GetLastOperationDate() const{
     return oper_date;
 }
 void Deposit::SetLastOperationDate(Date new_date){
+    if(new_date <= oper_date)
+        throw ERROR;
     oper_date = new_date;
 }
 void Deposit::SetValue(double new_value){
@@ -43,15 +49,18 @@ void Deposit::AddValue(double new_value){
     else
         throw ERROR;
 }
+
 std::string Deposit::Show(){
     return fmt::v9::format("Deposit type: Casual\nNumber: {}\nOpen date: {}\nLast operation date: {}\nCurrency: RUB\nValue: {}\nPercent: {}\n", 
     deposit_number, open_date.show(), oper_date.show(), value, percent);
 }
 
-//Table format:| Num |  Type   |Opened|LastOp|Cur|Diff|
+/*
+* Special output as table row.
+*/
 std::string Deposit::TableShow(){
     return fmt::v9::format("|{}|{}|{}|{}|{}|{}|{}|{}|", 
-    m_to_string(deposit_number, 5),
+    m_to_string(deposit_number, 10),
     " Casual  ", 
     open_date.show(), 
     oper_date.show(),
@@ -75,22 +84,28 @@ double CurrencyDeposit::ToRUB() const{
 FastDeposit::FastDeposit(Hash code, double value, double percent, Date date, Date end): Deposit(code, value, percent, date),
  end_date(end){
 }
+/*
+* Special output as table row.
+*/
 std::string FastDeposit::TableShow(){
     return fmt::v9::format("|{}|{}|{}|{}|{}|{}|{}|{}|", 
-    m_to_string(deposit_number, 5),
+    m_to_string(deposit_number, 10),
     "  Fast   ", 
     open_date.show(), 
     oper_date.show(),
     "RUB", 
-    1.0,
+    m_to_string(1.0, 4),
     m_to_string(value, 10), 
     m_to_string(percent, 4));
 }
 CurrencyDeposit::CurrencyDeposit(Hash code, std::string name, double value, double percent,double diff, Date date):
 Deposit( code, value, percent, date), currency_name(name), currency_diff(diff){}
-std::string CurrencyDeposit::TableShow(){
+/*
+* Special output as table row.
+*/
+std::string CurrencyDeposit::TableShow() {
     return fmt::v9::format("|{}|{}|{}|{}|{}|{}|{}|{}|", 
-    m_to_string(deposit_number, 5),
+    m_to_string(deposit_number, 10),
     "Currency ", 
     open_date.show(), 
     oper_date.show(),

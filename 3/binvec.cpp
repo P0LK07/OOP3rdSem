@@ -33,7 +33,6 @@ BinVec::BinVec(BinVec&& p)
 , size(p.len())
 {
     p.vec = nullptr;
-    p.size = 0;
 }
 
 BinVec::BinVec(int number)

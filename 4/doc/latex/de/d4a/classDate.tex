@@ -1,0 +1,88 @@
+\hypertarget{classDate}{}\doxysection{Date Class Reference}
+\label{classDate}\index{Date@{Date}}
+
+
+{\ttfamily \#include $<$casual.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDate_a90868c97cb6b08afc1bc54b2c7a429e8}{Date}} (unsigned, unsigned, unsigned)
+\item 
+unsigned \mbox{\hyperlink{classDate_a15a19216e9aa3e20d8fddcd620849b76}{to\+\_\+months}} () const
+\item 
+unsigned \mbox{\hyperlink{classDate_a4f6efda649848ed64dd56efd48a38b1b}{to\+\_\+years}} () const
+\item 
+\mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classDate_afac9321a6c0a6716aa26081e6a15462d}{operator-\/}} (const \mbox{\hyperlink{classDate}{Date}}) const
+\item 
+\mbox{\Hypertarget{classDate_aa8dc629b39fd9fe7cb16caedc5d97eef}\label{classDate_aa8dc629b39fd9fe7cb16caedc5d97eef}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classDate}{Date}}) const
+\item 
+\mbox{\Hypertarget{classDate_a23670209a2f845077fcd12cbfadb7612}\label{classDate_a23670209a2f845077fcd12cbfadb7612}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classDate}{Date}}) const
+\item 
+\mbox{\Hypertarget{classDate_aca11bce5f2926889725943b8fee0c620}\label{classDate_aca11bce5f2926889725943b8fee0c620}} 
+bool {\bfseries operator$<$=} (const \mbox{\hyperlink{classDate}{Date}}) const
+\item 
+\mbox{\Hypertarget{classDate_addfc3929d88e6a107f776c117ec71e00}\label{classDate_addfc3929d88e6a107f776c117ec71e00}} 
+bool {\bfseries operator$>$} (const \mbox{\hyperlink{classDate}{Date}}) const
+\item 
+\mbox{\Hypertarget{classDate_a70c239a764f53305775c3eb10b78d2e4}\label{classDate_a70c239a764f53305775c3eb10b78d2e4}} 
+bool {\bfseries operator$>$=} (const \mbox{\hyperlink{classDate}{Date}}) const
+\item 
+std\+::string \mbox{\hyperlink{classDate_acc0fb02f232c1b663638dea3f8f7310d}{show}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+My own class for counting date. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDate_a90868c97cb6b08afc1bc54b2c7a429e8}\label{classDate_a90868c97cb6b08afc1bc54b2c7a429e8}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{unsigned}]{D,  }\item[{unsigned}]{M,  }\item[{unsigned}]{Y }\end{DoxyParamCaption})}
+
+Create \mbox{\hyperlink{classDate}{Date}} class object. 
+\begin{DoxyParams}{Parameters}
+{\em D} & Days \\
+\hline
+{\em M} & Month \\
+\hline
+{\em Y} & Year \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDate_afac9321a6c0a6716aa26081e6a15462d}\label{classDate_afac9321a6c0a6716aa26081e6a15462d}} 
+\index{Date@{Date}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Date\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{a }\end{DoxyParamCaption}) const}
+
+Get difference between current date and some date. \mbox{\Hypertarget{classDate_acc0fb02f232c1b663638dea3f8f7310d}\label{classDate_acc0fb02f232c1b663638dea3f8f7310d}} 
+\index{Date@{Date}!show@{show}}
+\index{show@{show}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily std\+::string Date\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return string in DD.\+MM.\+YYYY format. \mbox{\Hypertarget{classDate_a15a19216e9aa3e20d8fddcd620849b76}\label{classDate_a15a19216e9aa3e20d8fddcd620849b76}} 
+\index{Date@{Date}!to\_months@{to\_months}}
+\index{to\_months@{to\_months}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{to\_months()}{to\_months()}}
+{\footnotesize\ttfamily unsigned Date\+::to\+\_\+months (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Count number of months between date 0.\+0.\+0000 and current date. \mbox{\Hypertarget{classDate_a4f6efda649848ed64dd56efd48a38b1b}\label{classDate_a4f6efda649848ed64dd56efd48a38b1b}} 
+\index{Date@{Date}!to\_years@{to\_years}}
+\index{to\_years@{to\_years}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{to\_years()}{to\_years()}}
+{\footnotesize\ttfamily unsigned Date\+::to\+\_\+years (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Count number of years between date 0.\+0.\+0000 and current date. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+casual.\+hpp\item 
+casual.\+cpp\end{DoxyCompactItemize}
